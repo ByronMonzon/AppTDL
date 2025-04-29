@@ -11,10 +11,10 @@ Aplicación web desarrollada con **React**, **React Bootstrap**, **SASS** y **CS
 - **Node.js** – Entorno de ejecución para instalar y administrar paquetes (npm).
 - **CSS personalizado** – Para personalizar completamente el diseño.
 
-1. Clonar repositorio
-git clone
-cd
-2. Instalar dependencias
+1. Clonar repositorio: 
+git clone https://github.com/ByronMonzon/AppTDL.git
+
+2. Instalar dependencias: 
 npm install
 
 3. Inicia la aplicación en modo desarrollo:
