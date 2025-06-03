@@ -1,18 +1,39 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Item.scss';
+import { useDispatch } from 'react-redux';
+import {
+  removeTodo
+} from '../../reducers/todoSlice';
 
-function Item() {
+function Item(props) {
+    const dispatch = useDispatch();
+
+    const removeItem = (e) => {
+      e.preventDefault();
+        dispatch(removeTodo(props.id));
+      }
+
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card >
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title>{props.name}</Card.Title>
+        <Card.Text className="fw-bold">
+          Description
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Text>
+          {props.description}
+        </Card.Text>
+        <Card.Text className="fw-bold">
+          Due Date
+        </Card.Text>
+        <Card.Text>
+          {props.dueDate}
+        </Card.Text>
+      </Card.Body>
+      <Card.Body>
+        <Button variant="info">Editar</Button>
+        <Button variant="info" onClick={removeItem}>Eliminar</Button>
       </Card.Body>
     </Card>
   );
