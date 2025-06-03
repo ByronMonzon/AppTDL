@@ -7,12 +7,12 @@ import {
 } from '../../reducers/todoSlice';
 
 function Item(props) {
+    const dispatch = useDispatch();
+
     const removeItem = (e) => {
       e.preventDefault();
-        dispatch(removeTodo(props.name));
+        dispatch(removeTodo(props.id));
       }
-
-      const dispatch = useDispatch();
 
   return (
     <Card >
